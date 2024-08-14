@@ -26,5 +26,11 @@ export default tseslint.config({
       'warn',
       { allowConstantExport: true },
     ],
+    'indent': [2, 2],
+    'max-len': ['error', {
+      'ignoreComments': true,
+      'code': 100
+    }],
+    'no-shadow': 'off',
   },
 })

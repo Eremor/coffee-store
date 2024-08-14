@@ -1,8 +1,7 @@
-export const App = () => {
+import { AppRouter } from "./providers/RouterProvider"
 
-  return (
-    <>
-      <h1>Vite + React</h1>
-    </>
-  )
-}
+export const App = () => (
+  <>
+    <AppRouter />
+  </>
+)
