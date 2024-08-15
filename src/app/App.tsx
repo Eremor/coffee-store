@@ -1,3 +1,5 @@
+import { Page } from 'widgets/Page';
+
 import { useTheme } from 'shared/lib/hooks';
 import { classNames } from 'shared/lib/helpers';
 
@@ -8,8 +10,10 @@ import './styles/index.css';
 export const App = () => {
   const { theme } = useTheme();
   return (
-    <div className={classNames('app', [theme])}>
-      <AppRouter />
-    </div>
+    <main className={classNames('app', [theme])}>
+      <Page>
+        <AppRouter />
+      </Page>
+    </main>
   );
 };

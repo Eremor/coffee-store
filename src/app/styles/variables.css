@@ -2,7 +2,12 @@
   --primary-color: #F5D009;
   --font-color: #000000;
   --bg-color: #ffffff;
-  --light-color: #F3F3F3;
+  --light-color: #FAFAFA;
+  --disabled-color: #F3F3F3;
   --border-color: #D8D8D8;
   --error-color: #F03B3B;
+
+  --max-page-width: 768px;
+
+  --header-height: 100px;
 }
