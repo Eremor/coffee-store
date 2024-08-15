@@ -1,3 +1,3 @@
 export {
-  OrderPage
+  OrderPage,
 } from './ui/OrderPage';

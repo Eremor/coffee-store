@@ -1,7 +1,7 @@
-import { Suspense, useCallback } from "react"
-import { Route, RouteProps, Routes } from "react-router-dom"
+import { Suspense, useCallback } from 'react';
+import { Route, RouteProps, Routes } from 'react-router-dom';
 
-import { routeConfig } from "../config/routeConfig";
+import { routeConfig } from '../config/routeConfig';
 
 export const AppRouter = () => {
   const renderWithWrapper = useCallback((route: RouteProps) => {
@@ -17,12 +17,12 @@ export const AppRouter = () => {
         path={route.path}
         element={element}
       />
-    )
+    );
   }, []);
 
   return (
     <Routes>
       {Object.values(routeConfig).map(renderWithWrapper)}
     </Routes>
-  )
-}
+  );
+};

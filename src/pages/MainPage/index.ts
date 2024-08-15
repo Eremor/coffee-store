@@ -1,3 +1,3 @@
 export {
-  MainPage
+  MainPage,
 } from './ui/MainPage';
