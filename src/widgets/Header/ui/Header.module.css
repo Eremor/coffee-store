@@ -19,6 +19,7 @@
   top: 0;
   right: clamp(30px, 8vw, 60px);
   height: var(--header-height);
+  width: 140px;
 }
 
 .figure svg {
