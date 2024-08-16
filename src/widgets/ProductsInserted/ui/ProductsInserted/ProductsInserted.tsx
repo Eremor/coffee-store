@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
 
 import { Tab } from 'shared/ui/Tab';
@@ -13,9 +13,11 @@ import {
 import sls from './ProductsInserted.module.css';
 
 export const ProductsInserted = memo(() => {
+  const [activeIndex, setActiveIndex] = useState<number>(0);
   const { setTheme } = useTheme();
 
   const onThemeChange = useCallback((index: number) => {
+    setActiveIndex(index);
     if (setTheme) {
       switch (index) {
         case 0:
@@ -53,6 +55,12 @@ export const ProductsInserted = memo(() => {
         ))}
       </TabList>
       <TabPanels className={sls.content}>
+        <div
+          className={sls.flag}
+          style={{
+            left: `${12.5 * (1 + activeIndex * 2)}%`,
+          }}
+        />
         {productsTabs.map(product => (
           <ProductsInsertedContent
             key={product.title}
