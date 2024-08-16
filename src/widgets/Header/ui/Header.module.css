@@ -16,7 +16,7 @@
 
 .figure {
   position: absolute;
-  top: 0;
+  top: -15px;
   right: clamp(30px, 8vw, 60px);
   height: var(--header-height);
   width: 140px;

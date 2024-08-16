@@ -1,10 +1,11 @@
 import { Header } from 'widgets/Header';
+import { ProductsInserted } from 'widgets/ProductsInserted';
 
 export const MainPage = () => {
   return (
     <>
       <Header />
-      <h2>Main page</h2>
+      <ProductsInserted />
     </>
   );
 };

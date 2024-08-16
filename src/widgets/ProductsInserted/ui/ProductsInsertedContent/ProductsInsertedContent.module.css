@@ -1,0 +1,23 @@
+.container {
+  padding: 0 10px;
+}
+
+.title {
+  position: relative;
+  font-size: 28px;
+  font-weight: 400;
+  z-index: 0;
+}
+
+.title::before {
+  position: absolute;
+  top: -10px;
+  left: -25px;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 60px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  z-index: -1;
+}
