@@ -10,6 +10,8 @@ import {
   ProductsInsertedContent,
 } from '../ProductsInsertedContent/ProductsInsertedContent';
 
+import TabsFlag from 'shared/assets/tabs-shadow.svg';
+
 import sls from './ProductsInserted.module.css';
 
 export const ProductsInserted = memo(() => {
@@ -60,7 +62,9 @@ export const ProductsInserted = memo(() => {
           style={{
             left: `${12.5 * (1 + activeIndex * 2)}%`,
           }}
-        />
+        >
+          <TabsFlag />
+        </div>
         {productsTabs.map(product => (
           <ProductsInsertedContent
             key={product.title}
