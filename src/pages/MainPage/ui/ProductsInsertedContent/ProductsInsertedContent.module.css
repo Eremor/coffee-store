@@ -3,6 +3,7 @@
 }
 
 .title {
+  margin-top: 10px;
   position: relative;
   font-size: 28px;
   font-weight: 400;
@@ -20,4 +21,11 @@
   background-color: var(--accent-color);
   border-radius: 50%;
   z-index: -1;
+}
+
+.products {
+  margin-top: 25px;
+  display: flex;
+  gap: clamp(15px, 3vw, 20px);
+  flex-wrap: wrap;
 }

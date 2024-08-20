@@ -1,5 +1,5 @@
 import { Header } from 'widgets/Header';
-import { ProductsInserted } from 'widgets/ProductsInserted';
+import { ProductsInserted } from './ProductsInserted/ProductsInserted';
 
 export const MainPage = () => {
   return (

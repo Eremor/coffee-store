@@ -1,12 +1,12 @@
 export type {
-  StateSchema
+  StateSchema,
 } from './types/StateSchema';
 
 export type {
   AppDispatch,
-  RootState
+  RootState,
 } from './config/store';
 
 export {
-  StoreProvider
+  StoreProvider,
 } from './ui/StoreProvider';

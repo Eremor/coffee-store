@@ -1,22 +1,33 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
 
 import { Tab } from 'shared/ui/Tab';
-import { useTheme } from 'shared/lib/hooks';
+import { useAppDispatch, useTheme } from 'shared/lib/hooks';
 import { Theme } from 'shared/const/theme';
 
-import { productsTabs } from '../../const/productsTabs';
+import { productsTabs } from '../../model/const/productsTabs';
 import {
   ProductsInsertedContent,
 } from '../ProductsInsertedContent/ProductsInsertedContent';
+import {
+  fetchAllProducts,
+} from '../../model/services/fetchAllProducts/fetchAllProducts';
+import {
+  getProductsData,
+  getProductsIsLoading,
+} from '../../model/selectors/productsSelector';
 
 import TabsFlag from 'shared/assets/tabs-shadow.svg';
 
 import sls from './ProductsInserted.module.css';
+import { useSelector } from 'react-redux';
 
 export const ProductsInserted = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);
   const { setTheme } = useTheme();
+  const dispatch = useAppDispatch();
+  const productsData = useSelector(getProductsData);
+  const productsIsLoading = useSelector(getProductsIsLoading);
 
   const onThemeChange = useCallback((index: number) => {
     setActiveIndex(index);
@@ -40,6 +51,10 @@ export const ProductsInserted = memo(() => {
       }
     }
   }, [setTheme]);
+
+  useEffect(() => {
+    dispatch(fetchAllProducts());
+  }, [dispatch]);
 
   return (
     <TabGroup
@@ -69,6 +84,8 @@ export const ProductsInserted = memo(() => {
           <ProductsInsertedContent
             key={product.title}
             title={product.title}
+            products={productsData}
+            isLoading={productsIsLoading}
           />
         ))}
       </TabPanels>
