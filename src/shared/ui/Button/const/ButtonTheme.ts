@@ -3,4 +3,5 @@ export enum ButtonTheme {
   CONTAINED = 'contained',
   OUTLINED = 'outlined',
   DISABLES = 'disabled',
+  CLOSED = 'closed',
 }

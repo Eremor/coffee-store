@@ -6,8 +6,13 @@
   --disabled-color: #F3F3F3;
   --border-color: #D8D8D8;
   --error-color: #F03B3B;
+  --overlay-color: rgba(0, 0, 0, 66%);
 
   --max-page-width: 768px;
 
   --header-height: 130px;
+
+  --drawer-z-index: 20;
+
+  --animation-duration: 300ms;
 }
