@@ -1,5 +1,12 @@
 import { memo, useCallback, useEffect, useState } from 'react';
 import { TabGroup, TabList, TabPanels } from '@headlessui/react';
+import { useSelector } from 'react-redux';
+
+import {
+  fetchAllProducts,
+  getProductsData,
+  getProductsIsLoading
+} from 'entities/Product';
 
 import { Tab } from 'shared/ui/Tab';
 import { useAppDispatch, useTheme } from 'shared/lib/hooks';
@@ -9,18 +16,10 @@ import { productsTabs } from '../../model/const/productsTabs';
 import {
   ProductsInsertedContent,
 } from '../ProductsInsertedContent/ProductsInsertedContent';
-import {
-  fetchAllProducts,
-} from '../../model/services/fetchAllProducts/fetchAllProducts';
-import {
-  getProductsData,
-  getProductsIsLoading,
-} from '../../model/selectors/productsSelector';
 
 import TabsFlag from 'shared/assets/tabs-shadow.svg';
 
 import sls from './ProductsInserted.module.css';
-import { useSelector } from 'react-redux';
 
 export const ProductsInserted = memo(() => {
   const [activeIndex, setActiveIndex] = useState<number>(0);

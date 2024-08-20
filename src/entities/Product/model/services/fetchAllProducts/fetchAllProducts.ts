@@ -1,5 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { Product } from 'entities/Product';
+
+import { Product } from '../../types/Product';
 
 export const fetchAllProducts = createAsyncThunk<Product[], undefined>(
   'products/fetchAllProducts',
