@@ -7,6 +7,7 @@ import { SelectedVolume } from 'features/selectedVolume';
 import { getProductsData, Product } from 'entities/Product';
 
 import sls from './Order.module.css';
+import { Additives } from 'features/addAdditives';
 
 interface OrderProps {
   id: string
@@ -42,6 +43,14 @@ export const Order = memo((props: OrderProps) => {
       <SelectedVolume
         className={sls.volumes}
       />
+      <Additives
+        className={sls.additivesBtn}
+      >
+        <PayButton
+          className={sls.payBtn}
+          total={currentProduct.price}
+        />
+      </Additives>
       <PayButton
         className={sls.payBtn}
         total={currentProduct.price}

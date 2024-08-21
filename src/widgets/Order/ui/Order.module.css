@@ -8,8 +8,8 @@
 }
 
 .image {
-  width: 180px;
-  height: 200px;
+  width: 170px;
+  height: 180px;
 }
 
 .image img {
@@ -26,6 +26,11 @@
   margin-top: 15px;
 }
 
+.additivesBtn {
+  margin-top: 10px;
+}
+
 .payBtn {
   margin-top: 10px;
+  position: relative;
 }

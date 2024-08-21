@@ -1,0 +1,26 @@
+.AdditivesButton {
+  padding: 21px 30px;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 15px;
+}
+
+.drawer {
+  padding-bottom: 15px;
+}
+
+.wrapper {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  list-style: none;
+}

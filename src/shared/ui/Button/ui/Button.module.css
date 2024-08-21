@@ -17,8 +17,7 @@
 
 .outlined {
   background-color: var(--light-color);
-  border: 1px;
-  border-color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 .disabled {
