@@ -6,6 +6,6 @@ export enum AppRoutes {
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.MAIN]: '/',
-  [AppRoutes.ORDER]: '/order/',
+  [AppRoutes.ORDER]: '/order',
   [AppRoutes.NOT_FOUND]: '*',
 };

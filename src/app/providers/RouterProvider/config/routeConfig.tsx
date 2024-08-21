@@ -12,7 +12,7 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     element: <MainPage />,
   },
   [AppRoutes.ORDER]: {
-    path: `${RoutePath.order}:id`,
+    path: RoutePath.order,
     element: <OrderPage />,
   },
   [AppRoutes.NOT_FOUND]: {

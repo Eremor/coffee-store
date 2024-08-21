@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import {
   fetchAllProducts,
   getProductsData,
-  getProductsIsLoading
+  getProductsIsLoading,
 } from 'entities/Product';
 
 import { Tab } from 'shared/ui/Tab';

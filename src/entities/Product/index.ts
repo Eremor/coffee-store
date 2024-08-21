@@ -3,7 +3,7 @@ export type {
 } from './model/types/Product';
 
 export type {
-  ProductsSchema
+  ProductsSchema,
 } from './model/types/ProductsSchema';
 
 export {
@@ -16,15 +16,15 @@ export {
 
 export {
   productsReducer,
-  productsActions
+  productsActions,
 } from './model/slice/productsSlice';
 
 export {
-  fetchAllProducts
+  fetchAllProducts,
 } from './model/services/fetchAllProducts/fetchAllProducts';
 
 export {
   getProductsData,
   getProductsError,
-  getProductsIsLoading
+  getProductsIsLoading,
 } from './model/selectors/productsSelector';

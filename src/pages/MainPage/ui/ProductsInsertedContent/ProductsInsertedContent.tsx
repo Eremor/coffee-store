@@ -1,7 +1,10 @@
 import { memo, useCallback, useState } from 'react';
 import { TabPanel } from '@headlessui/react';
 
+import { Order } from 'widgets/Order';
+
 import { Product, ProductCard } from 'entities/Product';
+
 import { Drawer } from 'shared/ui/Drawer';
 
 import sls from './ProductsInsertedContent.module.css';
@@ -19,10 +22,15 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
     isLoading,
   } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedId, setSelectedId] = useState<string>('');
 
-  const handleClick = useCallback((id: string) => {
-    console.log(id);
+  const handleOpen = useCallback((id: string) => {
     setIsOpen(true);
+    setSelectedId(id);
+  }, []);
+
+  const handleClose = useCallback(() => {
+    setIsOpen(false);
   }, []);
 
   if (!products) {
@@ -46,16 +54,16 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
               image={product.src}
               title={product.title}
               price={product.price}
-              onClick={handleClick}
+              onClick={handleOpen}
             />
           ))}
         </div>
       </TabPanel>
       <Drawer
         isOpen={isOpen}
-        onClose={() => setIsOpen(false)}
+        onClose={handleClose}
       >
-        <p>Drawer</p>
+        <Order id={selectedId} />
       </Drawer>
     </>
   );

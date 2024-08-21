@@ -1,0 +1,15 @@
+.PayButton {
+  padding: 18px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: 20px;
+  line-height: 1;
+  border-radius: 20px;
+}
+
+.total {
+  font-size: clamp(28px, 3vw, 32px);
+  font-weight: 600;
+}
