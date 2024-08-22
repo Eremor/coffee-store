@@ -5,6 +5,7 @@ import { Order } from 'widgets/Order';
 
 import { Product, ProductCard } from 'entities/Product';
 import { totalActions } from 'entities/Total';
+import { additiveActions } from 'entities/Additive';
 
 import { Drawer } from 'shared/ui/Drawer';
 import { useAppDispatch } from 'shared/lib/hooks';
@@ -35,6 +36,7 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
   const handleClose = useCallback(() => {
     setIsOpen(false);
     dispatch(totalActions.clearTotal());
+    dispatch(additiveActions.clearAdditives());
   }, [dispatch]);
 
   if (!products) {

@@ -1,4 +1,4 @@
-import { memo, useCallback, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 
 import { classNames } from 'shared/lib/helpers';
 import { Button, ButtonTheme } from 'shared/ui/Button';
@@ -13,18 +13,23 @@ import PlusIcon from 'shared/assets/plus.svg';
 import MinusIcon from 'shared/assets/minus.svg';
 
 import sls from './AdditivesItem.module.css';
+import { useAppDispatch } from 'shared/lib/hooks';
+import { additiveActions } from 'entities/Additive';
 
 interface AdditivesItemProps {
   className?: string
   title: string
+  weight: number
 }
 
 export const AdditivesItem = memo((props: AdditivesItemProps) => {
   const {
     className,
     title,
+    weight,
   } = props;
-  const [gram, setGram] = useState<number>(MIN_GRAM);
+  const [gram, setGram] = useState<number>(weight);
+  const dispatch = useAppDispatch();
 
   const increment = useCallback(() => {
     setGram(prev => prev + DEFAULT_GRAM);
@@ -33,6 +38,13 @@ export const AdditivesItem = memo((props: AdditivesItemProps) => {
   const decrement = useCallback(() => {
     setGram(prev => prev - DEFAULT_GRAM);
   }, []);
+
+  useEffect(() => {
+    dispatch(additiveActions.setAdditiveWeight({
+      title,
+      weight: gram,
+    }));
+  }, [gram, title, dispatch]);
 
   return (
     <li className={classNames(sls.AdditivesItem, [className])}>

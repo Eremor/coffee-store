@@ -1,11 +1,13 @@
 import { memo, ReactNode, useCallback, useState } from 'react';
+import { useSelector } from 'react-redux';
+
+import { getAdditives } from 'entities/Additive';
 
 import { classNames } from 'shared/lib/helpers';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Drawer } from 'shared/ui/Drawer';
 
 import { AdditivesItem } from '../AdditivesItem/AdditivesItem';
-import { additiveTitles } from '../../model/const/const';
 
 import sls from './Additives.module.css';
 
@@ -20,6 +22,7 @@ export const Additives = memo((props: AdditivesProps) => {
     children,
   } = props;
   const [isOpen, setIsOpen] = useState(false);
+  const additives = useSelector(getAdditives);
 
   const handleOpen = useCallback(() => {
     setIsOpen(true);
@@ -45,10 +48,11 @@ export const Additives = memo((props: AdditivesProps) => {
       >
         <div className={sls.wrapper}>
           <ul className={sls.list}>
-            {additiveTitles.map(title => (
+            {additives.map(additive => (
               <AdditivesItem
-                key={title}
-                title={title}
+                key={additive.title}
+                title={additive.title}
+                weight={additive.weight}
               />
             ))}
           </ul>
