@@ -1,23 +1,23 @@
-import { memo, ReactNode, useCallback, useState } from "react";
+import { memo, ReactNode, useCallback, useState } from 'react';
 
-import { classNames } from "shared/lib/helpers";
-import { Button, ButtonTheme } from "shared/ui/Button";
-import { Drawer } from "shared/ui/Drawer";
+import { classNames } from 'shared/lib/helpers';
+import { Button, ButtonTheme } from 'shared/ui/Button';
+import { Drawer } from 'shared/ui/Drawer';
 
-import { AdditivesItem } from "../AdditivesItem/AdditivesItem";
-import { additiveTitles } from "../../model/const/const";
+import { AdditivesItem } from '../AdditivesItem/AdditivesItem';
+import { additiveTitles } from '../../model/const/const';
 
 import sls from './Additives.module.css';
 
 interface AdditivesProps {
-  className?: string;
-  children?: ReactNode;
+  className?: string
+  children?: ReactNode
 }
 
 export const Additives = memo((props: AdditivesProps) => {
   const {
     className,
-    children
+    children,
   } = props;
   const [isOpen, setIsOpen] = useState(false);
 
@@ -45,8 +45,9 @@ export const Additives = memo((props: AdditivesProps) => {
       >
         <div className={sls.wrapper}>
           <ul className={sls.list}>
-            {additiveTitles.map((title) => (
+            {additiveTitles.map(title => (
               <AdditivesItem
+                key={title}
                 title={title}
               />
             ))}
@@ -55,5 +56,5 @@ export const Additives = memo((props: AdditivesProps) => {
         </div>
       </Drawer>
     </>
-  )
-})
+  );
+});

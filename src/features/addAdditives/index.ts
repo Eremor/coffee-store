@@ -1,3 +1,3 @@
 export {
-  Additives
-} from './ui/Additives/Additives'
+  Additives,
+} from './ui/Additives/Additives';

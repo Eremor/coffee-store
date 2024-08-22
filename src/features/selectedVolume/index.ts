@@ -1,3 +1,3 @@
 export {
-  SelectedVolume
-} from './ui/SelectedVolume'
+  SelectedVolume,
+} from './ui/SelectedVolume';

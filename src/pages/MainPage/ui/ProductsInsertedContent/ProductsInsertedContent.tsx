@@ -4,8 +4,10 @@ import { TabPanel } from '@headlessui/react';
 import { Order } from 'widgets/Order';
 
 import { Product, ProductCard } from 'entities/Product';
+import { totalActions } from 'entities/Total';
 
 import { Drawer } from 'shared/ui/Drawer';
+import { useAppDispatch } from 'shared/lib/hooks';
 
 import sls from './ProductsInsertedContent.module.css';
 
@@ -23,6 +25,7 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
   } = props;
   const [isOpen, setIsOpen] = useState(false);
   const [selectedId, setSelectedId] = useState<string>('');
+  const dispatch = useAppDispatch();
 
   const handleOpen = useCallback((id: string) => {
     setIsOpen(true);
@@ -31,7 +34,8 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
-  }, []);
+    dispatch(totalActions.clearTotal());
+  }, [dispatch]);
 
   if (!products) {
     return null;

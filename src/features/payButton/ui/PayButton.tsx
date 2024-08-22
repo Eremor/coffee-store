@@ -1,20 +1,20 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
-import { RoutePath } from "shared/const/route";
-import { classNames } from "shared/lib/helpers";
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { RoutePath } from 'shared/const/route';
+import { classNames } from 'shared/lib/helpers';
 
 import sls from './PayButton.module.css';
 
 interface PayButtonProps {
-  total: number;
-  className?: string;
+  className?: string
+  total: number
 }
 
 export const PayButton = memo((props: PayButtonProps) => {
   const {
+    className,
     total,
-    className
   } = props;
 
   return (
@@ -29,5 +29,5 @@ export const PayButton = memo((props: PayButtonProps) => {
         &#8381;
       </span>
     </AppLink>
-  )
-})
+  );
+});

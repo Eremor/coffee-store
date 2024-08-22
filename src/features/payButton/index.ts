@@ -1,3 +1,3 @@
 export {
-  PayButton
+  PayButton,
 } from './ui/PayButton';

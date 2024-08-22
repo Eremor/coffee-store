@@ -1,7 +1,7 @@
 export {
-  AppLinkTheme
+  AppLinkTheme,
 } from './const/AppLinkTheme';
 
 export {
-  AppLink
+  AppLink,
 } from './ui/AppLink';

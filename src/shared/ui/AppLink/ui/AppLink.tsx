@@ -1,16 +1,16 @@
-import { memo, ReactNode } from "react";
-import { LinkProps, Link } from "react-router-dom";
+import { memo, ReactNode } from 'react';
+import { LinkProps, Link } from 'react-router-dom';
 
-import { classNames } from "shared/lib/helpers";
+import { classNames } from 'shared/lib/helpers';
 
-import { AppLinkTheme } from "../const/AppLinkTheme";
+import { AppLinkTheme } from '../const/AppLinkTheme';
 
 import sls from './AppLink.module.css';
 
 interface AppLinkProps extends LinkProps {
-  theme?: AppLinkTheme;
-  className?: string;
-  children?: ReactNode;
+  theme?: AppLinkTheme
+  className?: string
+  children?: ReactNode
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
@@ -30,5 +30,5 @@ export const AppLink = memo((props: AppLinkProps) => {
     >
       {children}
     </Link>
-  )
-})
+  );
+});

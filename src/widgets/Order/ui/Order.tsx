@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 
 import { PayButton } from 'features/payButton';
 import { SelectedVolume } from 'features/selectedVolume';
+import { Additives } from 'features/addAdditives';
 
 import { getProductsData, Product } from 'entities/Product';
+import { getTotalPrice } from 'entities/Total';
 
 import sls from './Order.module.css';
-import { Additives } from 'features/addAdditives';
 
 interface OrderProps {
   id: string
@@ -17,6 +18,7 @@ export const Order = memo((props: OrderProps) => {
   const { id } = props;
   const [currentProduct, setCurrentProduct] = useState<Product>();
   const products = useSelector(getProductsData);
+  const totalPrice = useSelector(getTotalPrice);
 
   useEffect(() => {
     if (products) {
@@ -48,12 +50,12 @@ export const Order = memo((props: OrderProps) => {
       >
         <PayButton
           className={sls.payBtn}
-          total={currentProduct.price}
+          total={totalPrice}
         />
       </Additives>
       <PayButton
         className={sls.payBtn}
-        total={currentProduct.price}
+        total={totalPrice}
       />
     </div>
   );

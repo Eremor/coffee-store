@@ -1,5 +1,9 @@
 import { memo, useCallback } from 'react';
+
+import { totalActions } from 'entities/Total';
+
 import { classNames } from 'shared/lib/helpers';
+import { useAppDispatch } from 'shared/lib/hooks';
 
 import sls from './ProductCard.module.css';
 
@@ -21,10 +25,12 @@ export const ProductCard = memo((props: ProductCardProps) => {
     className,
     onClick,
   } = props;
+  const dispatch = useAppDispatch();
 
   const handleClick = useCallback(() => {
     onClick(id);
-  }, [id, onClick]);
+    dispatch(totalActions.setBasePrice(price));
+  }, [id, onClick, price, dispatch]);
 
   return (
     <div

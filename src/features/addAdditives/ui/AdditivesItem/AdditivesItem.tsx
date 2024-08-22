@@ -1,13 +1,13 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useCallback, useState } from 'react';
 
-import { classNames } from "shared/lib/helpers";
-import { Button, ButtonTheme } from "shared/ui/Button";
+import { classNames } from 'shared/lib/helpers';
+import { Button, ButtonTheme } from 'shared/ui/Button';
 
 import {
   DEFAULT_GRAM,
   MAX_GRAM,
-  MIN_GRAM
-} from "../../model/const/const";
+  MIN_GRAM,
+} from '../../model/const/const';
 
 import PlusIcon from 'shared/assets/plus.svg';
 import MinusIcon from 'shared/assets/minus.svg';
@@ -15,23 +15,23 @@ import MinusIcon from 'shared/assets/minus.svg';
 import sls from './AdditivesItem.module.css';
 
 interface AdditivesItemProps {
-  className?: string;
-  title: string;
+  className?: string
+  title: string
 }
 
 export const AdditivesItem = memo((props: AdditivesItemProps) => {
   const {
     className,
-    title
+    title,
   } = props;
-  const [gram, setGram] = useState(MIN_GRAM);
+  const [gram, setGram] = useState<number>(MIN_GRAM);
 
   const increment = useCallback(() => {
-    setGram((prev) => prev + DEFAULT_GRAM)
+    setGram(prev => prev + DEFAULT_GRAM);
   }, []);
 
   const decrement = useCallback(() => {
-    setGram((prev) => prev - DEFAULT_GRAM)
+    setGram(prev => prev - DEFAULT_GRAM);
   }, []);
 
   return (
@@ -59,5 +59,5 @@ export const AdditivesItem = memo((props: AdditivesItemProps) => {
         </Button>
       </div>
     </li>
-  )
-})
+  );
+});
