@@ -1,0 +1,50 @@
+.OrderCashPage {
+  padding-inline: 10px;
+  padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-color);
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon {
+  margin-top: 160px;
+  margin-bottom: 50px;
+  width: 100px;
+  height: 100px;
+  align-self: center;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  font-size: 20px;
+}
+
+.text span {
+  margin-left: 10px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cancel {
+  padding-block: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: var(--font-color);
+  background-color: var(--light-color);
+  border-radius: 15px;
+}

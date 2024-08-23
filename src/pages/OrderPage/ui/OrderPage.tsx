@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { AppLink, AppLinkTheme } from "shared/ui/AppLink";
-import { RoutePath } from "shared/const/route";
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink';
+import { RoutePath } from 'shared/const/route';
 
 import BackIcon from 'shared/assets/back.svg';
 

@@ -1,3 +1,3 @@
 export {
-  OrderCashPage
-} from './ui/OrderCashPage'
+  OrderCashPage,
+} from './ui/OrderCashPage';

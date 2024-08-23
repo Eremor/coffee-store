@@ -22,5 +22,6 @@ createRoot(container).render(
         </StoreProvider>
       </ThemeProvider>
     </BrowserRouter>
+    ,
   </StrictMode>,
 );
