@@ -5,6 +5,7 @@ import { OrderPage } from 'pages/OrderPage';
 import { NotFoundPage } from 'pages/NotFoundPage';
 import { OrderCashPage } from 'pages/OrderCashPage';
 import { OrderCardPage } from 'pages/OrderCardPage';
+import { PayErrorPage } from 'pages/PayErrorPage';
 
 import { AppRoutes, RoutePath } from 'shared/const/route';
 
@@ -24,6 +25,10 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.ORDER_CASH]: {
     path: RoutePath.order_cash,
     element: <OrderCashPage />,
+  },
+  [AppRoutes.PAY_ERROR]: {
+    path: RoutePath.pay_error,
+    element: <PayErrorPage />,
   },
   [AppRoutes.NOT_FOUND]: {
     path: RoutePath.not_found,

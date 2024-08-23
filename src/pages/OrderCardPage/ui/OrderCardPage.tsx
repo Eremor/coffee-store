@@ -1,5 +1,6 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { getTotalPrice } from 'entities/Total';
 
@@ -13,6 +14,7 @@ import sls from './OrderCardPage.module.css';
 
 export const OrderCardPage = memo(() => {
   const total = useSelector(getTotalPrice);
+  const navigate = useNavigate();
 
   const emulate = useCallback((result: boolean) => {
     if (result) {
@@ -21,6 +23,7 @@ export const OrderCardPage = memo(() => {
     else {
       console.log('Платёж не удался');
       emulator.BankCardCancel();
+      navigate(RoutePath.pay_error)
     }
   }, []);
 
