@@ -74,16 +74,16 @@ class Emulator {
     }
   }
 
-  Vend(product_idx: number, cb: VendCallback): void {
+  Vend(product_idx: string, cb: VendCallback): void {
     console.log(`Запрос на выдачу продукта с индексом ${product_idx}`);
 
     this.vendHandler = (event: KeyboardEvent) => {
       switch (event.key) {
-        case 'Enter':
+        case 'f':
           console.log('Выдача успешна.');
           cb(true);
           break;
-        case 'Escape':
+        case 'e':
           console.log('Выдача не удалась.');
           cb(false);
           break;

@@ -19,11 +19,14 @@ export const OrderCardPage = memo(() => {
   const emulate = useCallback((result: boolean) => {
     if (result) {
       console.log('Платёж прошел успешно');
+      setTimeout(() => {
+        navigate(RoutePath.vend);
+      }, 2000);
     }
     else {
       console.log('Платёж не удался');
       emulator.BankCardCancel();
-      navigate(RoutePath.pay_error)
+      navigate(RoutePath.pay_error);
     }
   }, []);
 

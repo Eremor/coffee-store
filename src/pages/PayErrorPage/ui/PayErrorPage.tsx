@@ -1,9 +1,9 @@
-import { memo } from "react";
+import { memo } from 'react';
 
-import { AppLink } from "shared/ui/AppLink";
-import { RoutePath } from "shared/const/route";
+import { AppLink } from 'shared/ui/AppLink';
+import { RoutePath } from 'shared/const/route';
 
-import CancelIcon from 'shared/assets/plus.svg'
+import CancelIcon from 'shared/assets/plus.svg';
 
 import sls from './PayErrorPage.module.css';
 
@@ -33,5 +33,5 @@ export const PayErrorPage = memo(() => {
         </AppLink>
       </div>
     </div>
-  )
-})
+  );
+});

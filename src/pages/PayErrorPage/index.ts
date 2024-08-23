@@ -1,3 +1,3 @@
 export {
-  PayErrorPage
+  PayErrorPage,
 } from './ui/PayErrorPage';
