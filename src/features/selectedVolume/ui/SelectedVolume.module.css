@@ -1,0 +1,56 @@
+.SelectedVolume {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: clamp(170px, 33vw, 230px);
+}
+
+.item {
+  padding: clamp(15px, 3vw, 20px);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 100%;
+  background-color: var(--disabled-color);
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  width: clamp(90px, 18vw, 130px);
+  height: clamp(90px, 18vw, 130px);
+}
+
+.icon svg {
+  opacity: 0.3;
+  width: 100%;
+  height: 100%;
+}
+
+.item:first-child .icon {
+  width: clamp(60px, 10vw, 80px);
+  height: clamp(60px, 10vw, 80px);
+}
+
+.item:nth-child(2) .icon {
+  width: clamp(75px, 13vw, 100px);
+  height: clamp(75px, 13vw, 100px);
+}
+
+.text {
+  margin-top: 20px;
+  font-size: clamp(16px, 3vw, 20px);
+}
+
+.item[data-checked] {
+  background-color: var(--primary-color);
+}
+
+.item[data-checked] svg {
+  background-color: var(--primary-color);
+  opacity: 1;
+}

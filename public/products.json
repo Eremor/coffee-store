@@ -1,0 +1,40 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "Эспрессо",
+      "price": 79,
+      "src": "./espresso.png"
+    },
+    {
+      "id": "2",
+      "title": "Эспрессо",
+      "price": 109,
+      "src": "./dvojnoj-espresso.png"
+    },
+    {
+      "id": "3",
+      "title": "Американо",
+      "price": 119,
+      "src": "./amerikano.png"
+    },
+    {
+      "id": "4",
+      "title": "Латте",
+      "price": 129,
+      "src": "./latte.png"
+    },
+    {
+      "id": "5",
+      "title": "Капучино",
+      "price": 129,
+      "src": "./cappuccino.png"
+    },
+    {
+      "id": "6",
+      "title": "Макиато",
+      "price": 129,
+      "src": "./makiato.png"
+    }
+  ]
+}

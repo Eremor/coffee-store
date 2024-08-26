@@ -1,0 +1,40 @@
+.VendErrorPage {
+  padding-inline: 10px;
+  padding-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--attention-color);
+}
+
+.icon {
+  margin-top: 60%;
+  width: 150px;
+  height: 150px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 34px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--light-color);
+}
+
+.btn {
+  margin-top: auto;
+  padding-block: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: var(--attention-color);
+  background-color: var(--light-color);
+  border-radius: 15px;
+}

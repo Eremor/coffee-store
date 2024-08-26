@@ -1,0 +1,72 @@
+.PayErrorPage {
+  padding-inline: 10px;
+  padding-block: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--error-color);
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  margin-top: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.icon {
+  padding: 48px;
+  width: 150px;
+  height: 150px;
+  border: 2px solid var(--bg-color);
+  border-radius: 50%;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon path {
+  fill: var(--bg-color);
+}
+
+.text {
+  font-size: 28px;
+  text-align: center;
+  letter-spacing: 2px;
+  color: var(--bg-color);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+}
+
+.returnBtn {
+  padding-block: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: var(--error-color);
+  background-color: var(--light-color);
+  border-radius: 15px;
+}
+
+.cancelBtn {
+  padding-block: 10px;
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  color: var(--bg-color);
+  background-color: var(--error-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 15px;
+}

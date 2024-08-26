@@ -1,0 +1,25 @@
+.AuthButton {
+  padding-right: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-radius: 20px;
+}
+
+.icon {
+  padding: 15px;
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 20px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  font-size: clamp(12px, 2.5vw,16px);
+}
