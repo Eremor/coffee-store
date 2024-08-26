@@ -82,6 +82,7 @@ export const OrderCashPage = memo(() => {
       <AppLink
         className={sls.cancel}
         to={RoutePath.order}
+        onClick={() => emulator.StopCashin()}
       >
         Отмена
       </AppLink>

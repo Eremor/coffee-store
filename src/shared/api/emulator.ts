@@ -12,17 +12,21 @@ class Emulator {
     console.log('Купюроприёмник включён.');
 
     this.cashinHandler = (event: KeyboardEvent) => {
+      event.preventDefault();
+
       let amount = 0;
-      switch (event.key) {
-        case '1':
-          amount = 10;
-          break;
-        case '2':
-          amount = 50;
-          break;
-        case '3':
-          amount = 100;
-          break;
+      if (event.ctrlKey) {
+        switch (event.key) {
+          case '1':
+            amount = 10;
+            break;
+          case '2':
+            amount = 50;
+            break;
+          case '3':
+            amount = 100;
+            break;
+        }
       }
 
       if (amount > 0) {
@@ -47,19 +51,24 @@ class Emulator {
     display_cb('Приложите карту');
 
     this.cardHandler = (event: KeyboardEvent) => {
-      switch (event.key) {
-        case 'Enter':
-          display_cb('Обработка карты');
-          display_cb('Связь с банком');
-          setTimeout(() => {
-            cb(true);
-            display_cb('Транзакция завершена успешно.');
-          }, 2000);
-          break;
-        case 'Escape':
-          cb(false);
-          display_cb('Транзакция не удалась.');
-          break;
+      event.stopImmediatePropagation();
+      event.preventDefault();
+
+      if (event.ctrlKey) {
+        switch (event.key) {
+          case 'Enter':
+            display_cb('Обработка карты');
+            display_cb('Связь с банком');
+            setTimeout(() => {
+              cb(true);
+              display_cb('Транзакция завершена успешно.');
+            }, 2000);
+            break;
+          case 'c':
+            cb(false);
+            display_cb('Транзакция не удалась.');
+            break;
+        }
       }
     };
 
@@ -67,7 +76,6 @@ class Emulator {
   }
 
   BankCardCancel(): void {
-    console.log('Отмена операции по карте.');
     if (this.cardHandler) {
       document.removeEventListener('keydown', this.cardHandler);
       this.cardHandler = null;
@@ -78,15 +86,19 @@ class Emulator {
     console.log(`Запрос на выдачу продукта с индексом ${product_idx}`);
 
     this.vendHandler = (event: KeyboardEvent) => {
-      switch (event.key) {
-        case 'f':
-          console.log('Выдача успешна.');
-          cb(true);
-          break;
-        case 'e':
-          console.log('Выдача не удалась.');
-          cb(false);
-          break;
+      event.preventDefault();
+
+      if (event.ctrlKey) {
+        switch (event.key) {
+          case 'Enter':
+            console.log('Выдача успешна.');
+            cb(true);
+            break;
+          case 'c':
+            console.log('Выдача не удалась.');
+            cb(false);
+            break;
+        }
       }
     };
 

@@ -22,9 +22,11 @@ export const OrderCardPage = memo(() => {
       setTimeout(() => {
         navigate(RoutePath.vend);
       }, 2000);
+      emulator.BankCardCancel();
     }
     else {
-      console.log('Платёж не удался');
+      // console.log('Платёж не удался');
+      console.log('Отмена операции по карте.');
       emulator.BankCardCancel();
       navigate(RoutePath.pay_error);
     }

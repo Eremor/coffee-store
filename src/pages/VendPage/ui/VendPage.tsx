@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 
 import { emulator } from 'shared/api/emulator';
 import { RoutePath } from 'shared/const/route';
+import { Timer } from 'shared/ui/Timer';
+
+import sls from './VendPage.module.css';
 
 export const VendPage = memo(() => {
   const navigate = useNavigate();
@@ -26,8 +29,11 @@ export const VendPage = memo(() => {
   }, []);
 
   return (
-    <>
-      vend
-    </>
+    <div className={sls.VendPage}>
+      <Timer
+        initialTime={60}
+        path={RoutePath.vend_finish}
+      />
+    </div>
   );
 });
