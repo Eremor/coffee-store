@@ -1,5 +1,8 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
+import { getSelectedProductId } from 'entities/Order';
 
 import { emulator } from 'shared/api/emulator';
 import { RoutePath } from 'shared/const/route';
@@ -9,6 +12,7 @@ import sls from './VendPage.module.css';
 
 export const VendPage = memo(() => {
   const navigate = useNavigate();
+  const currentProductId = useSelector(getSelectedProductId);
 
   const emulate = useCallback((result: boolean) => {
     if (result) {
@@ -23,7 +27,7 @@ export const VendPage = memo(() => {
 
   useEffect(() => {
     emulator.Vend(
-      '1',
+      currentProductId,
       emulate,
     );
   }, []);

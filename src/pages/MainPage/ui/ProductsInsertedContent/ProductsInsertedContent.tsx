@@ -11,6 +11,7 @@ import { Drawer } from 'shared/ui/Drawer';
 import { useAppDispatch } from 'shared/lib/hooks';
 
 import sls from './ProductsInsertedContent.module.css';
+import { currentOrderActions } from 'entities/Order';
 
 interface ProductsInsertedContentProps {
   title: string
@@ -31,12 +32,14 @@ export const ProductsInsertedContent = memo((props: ProductsInsertedContentProps
   const handleOpen = useCallback((id: string) => {
     setIsOpen(true);
     setSelectedId(id);
+    dispatch(currentOrderActions.setSelectedProductId(id));
   }, []);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
     dispatch(totalActions.clearTotal());
     dispatch(additiveActions.clearAdditives());
+    dispatch(currentOrderActions.clearSelectedProductId());
   }, [dispatch]);
 
   if (!products) {
