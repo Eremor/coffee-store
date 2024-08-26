@@ -1,0 +1,34 @@
+.VendFinishPage {
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+}
+
+.icon {
+  margin-top: -100px;
+  width: 100px;
+  height: 150px;
+}
+
+.icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.icon path:last-child {
+  fill: var(--primary-color);
+}
+
+.title {
+  margin-top: 20px;
+  font-size: 32px;
+}
+
+.text {
+  font-size: 20px;
+}

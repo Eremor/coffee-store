@@ -1,3 +1,3 @@
 export {
-  Timer
+  Timer,
 } from './ui/Timer';

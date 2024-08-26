@@ -1,36 +1,36 @@
-import { memo, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { memo, useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { classNames } from "shared/lib/helpers";
+import { classNames } from 'shared/lib/helpers';
 
 import sls from './Timer.module.css';
 
 interface TimerProps {
-  initialTime: number;
-  className?: string;
-  path: string;
+  initialTime: number
+  className?: string
+  path: string
 }
 
 export const Timer = memo((props: TimerProps) => {
   const {
     initialTime,
     className,
-    path
+    path,
   } = props;
   const navigate = useNavigate();
   const [timeLeft, setTileLeft] = useState(initialTime);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setTileLeft((prev) => (prev > 0 ? prev - 1 : 0));
-    }, 1000)
+      setTileLeft(prev => (prev > 0 ? prev - 1 : 0));
+    }, 1000);
 
     if (timeLeft === 0) {
-      navigate(path)
+      navigate(path);
     }
 
-    return () => clearInterval(interval)
-  }, [timeLeft])
+    return () => clearInterval(interval);
+  }, [timeLeft]);
 
   const radius = 120;
   const circumference = 2 * Math.PI * radius;
@@ -75,5 +75,5 @@ export const Timer = memo((props: TimerProps) => {
         <p className={sls.desc}>Приготовление напитка</p>
       </div>
     </div>
-  )
-})
+  );
+});
